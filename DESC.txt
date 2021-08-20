@@ -1,0 +1,50 @@
+This file is for storing all the concepts learned and an overview of the logic and project.
+This is a BattleShip Game built to support both single and multiplayer. It is built using SOCKET.IO
+
+OVERVIEW OF CONCEPTS :-
+
+1.) We have created a .container class in singleplayer.html and multiplayer.html which contains a grid for the player
+    and a grid for the computer in case of single player, or a grid for player1 and another grid for player2 in case of multiplayer battle.
+2.) We also have a div with class hidden-info in singleplayer.html and multiplayer.html which contains a div with class and id called 'setup-buttons' with 2 buttons:-
+        a.) First button is for implementing the start functionality for the Game
+        b.) Second button is for implementing the rotate ships functionality
+    It also has two h3 tags with the following functionality :-
+        a.) The first h3 tag with id 'whose-go' is for telling the player when its his/her turn
+        b.) The second h3 tag with id 'info' is for informing a player when he has sunk the opponent's ship and when the opponent has sunk his
+3.) We have another div with class 'container' which in turn has another div called 'grid-display' which contains the location of the 5 ships.
+    The location tracking is done because we create the same number of divs as the number of holes in a ship. We assign each div a id which is equal to the hole number -1.
+    eg: For a battleship we have 4 div inside the div with class 'ship battleship-container' with id's battleship-0, battleship-2, battleship-2 and battleship-3 respectively
+4.) In index.html file we have a div with class 'splash-container' that has the following :-
+        a.) A h1 tag with class 'splash-title' that is going to display the name of the Game
+        b.) A div tag that contains 2 links - One is for playing singleplayer and the other button is for playing multiplayer
+5.) We have added script tag inside the head tag in singleplayer.html and multiplayer.html so to make sure that the JS runs after the HTML has been loaded,
+    we add an Event Listener to the entire document that runs at the event when the content has been loaded in the DOM. The name of the event is 'DOMContentLoaded'.
+6.) We have created a file server.js through which the game will start running.
+7.) We have also made changes to the package.json file. They are stated below :-
+    a.) We have added a description
+    b.) We have changed the value of the 'main' attribute from index.js file to server.js file.
+        This will enable us to run the server through the 'server.js' file
+    c.) We have added 2 keys to the scripts tag :-
+        1.) A 'start' key that will enable the command 'node server' to deploy the production server
+        2.) A 'dev' key that will run the command 'nodemon server' to run the development server
+8.)  
+
+
+
+
+
+
+
+TOPICS DISCUSSED :-
+
+1.) More about Socket.io - https://socket.io/docs/v4
+2.) More on .dataset - https://xcatherine-jimenez.medium.com/using-dataset-in-javascript-4bfa2d657590
+3.) How to toggle b/w 2 classes in JS - https://www.w3schools.com/howto/howto_js_toggle_class.asp
+4.) The path module in Node.js - https://nodejs.org/api/path.html#path_path
+    The path module provides utilities for working with file and directory paths.
+5.) Why to set the PORT number and all related details - https://stackoverflow.com/questions/18864677/what-is-process-env-port-in-node-js
+    To know more about environments in programming - https://www.quora.com/What-is-the-programming-environment?share=1
+6.) 
+
+
+
