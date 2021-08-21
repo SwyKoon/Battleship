@@ -326,18 +326,22 @@ document.addEventListener('DOMContentLoaded', () => {
   
       if (isHorizontal && !newNotAllowedHorizontal.includes(shipLastId)) {
         for (let i=0; i < draggedShipLength; i++) {
+          // This code is for adding the curves to the start or end of the ship irrespective of alignment
           let directionClass
           if (i === 0) directionClass = 'start'
           if (i === draggedShipLength - 1) directionClass = 'end'
+          
           userSquares[parseInt(this.dataset.id) - selectedShipIndex + i].classList.add('taken', 'horizontal', directionClass, shipClass)
         }
       //As long as the index of the ship you are dragging is not in the newNotAllowedVertical array! This means that sometimes if you drag the ship by its
       //index-1 , index-2 and so on, the ship will rebound back to the displayGrid.
       } else if (!isHorizontal && !newNotAllowedVertical.includes(shipLastId)) {
         for (let i=0; i < draggedShipLength; i++) {
+          // This code is for adding the curves to the start or end of the ship irrespective of alignment
           let directionClass
           if (i === 0) directionClass = 'start'
           if (i === draggedShipLength - 1) directionClass = 'end'
+
           // console.log(parseInt(this.dataset.id) - selectedShipIndex + width*i);
           userSquares[parseInt(this.dataset.id) + width*i].classList.add('taken', 'vertical', directionClass, shipClass)
         }
@@ -434,8 +438,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function enemyGo(square) {
       if (gameMode === 'singlePlayer') square = Math.floor(Math.random() * userSquares.length)
       if (!userSquares[square].classList.contains('boom')) {
+        
+        // These 2 lines of codes are first storing true or false in hit variable and then 
+        // adding class boom or miss based on whether hit is true or false
         const hit = userSquares[square].classList.contains('taken')
         userSquares[square].classList.add(hit ? 'boom' : 'miss')
+
         if (userSquares[square].classList.contains('destroyer')) cpuDestroyerCount++
         if (userSquares[square].classList.contains('submarine')) cpuSubmarineCount++
         if (userSquares[square].classList.contains('cruiser')) cpuCruiserCount++

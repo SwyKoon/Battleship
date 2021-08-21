@@ -27,8 +27,22 @@ OVERVIEW OF CONCEPTS :-
     c.) We have added 2 keys to the scripts tag :-
         1.) A 'start' key that will enable the command 'node server' to deploy the production server
         2.) A 'dev' key that will run the command 'nodemon server' to run the development server
-8.)  
-
+8.) The index.html file is for creating the intro splash page that gets loaded first up and provides us the option to choose the gameMode.
+    The gameMode can either be 'Singleplayer' or 'Multiplayer'
+9.) We have put those anchor tags that contain buttons for singleplayer or multiplayer inside a div, bcoz we want to add display: flex
+    to the div with class 'splash-container' and we do not want the buttons to get affected by it.
+10.) We wanted to add some margin b/w the 2 anchor tags containing the options to choose singleplayer and multiplayer.
+     We add margin-left property to the anchor tag's class which is 'splash-btn'. But we also so not want the first button to recieve 
+     margin for no use. So we specify margin-left property in the class 'splash-btn:first-child' to 0 to avoid adding any unwanted margin.
+11.) Wherever we have added the container class to any div, we have done so, so that we can center the content contained in the div
+12.) We have added the classes 'start' and 'end' to the respective ships' divs that are the first and last respectively so that we could
+     add CSS to them to make their edges rounded.
+13.) In the CSS file, in .taken.horizontal::before and .taken.vertical::before, we have set the borders on the start and end as 0, so as to add 
+     animations of ripple effect to the side of the ships.
+14.) To wrap the borders along the side on the curves of top and end, we have added the border:50% property to .taken.start.horizontal::before, .taken.end.horizontal::before, 
+     .taken.start.vertical::before and .taken.end.vertical::before
+15.) We are going to get the circular pegs inside the .boom::after and .miss::after class
+16.) 
 
 
 
@@ -44,7 +58,13 @@ TOPICS DISCUSSED :-
     The path module provides utilities for working with file and directory paths.
 5.) Why to set the PORT number and all related details - https://stackoverflow.com/questions/18864677/what-is-process-env-port-in-node-js
     To know more about environments in programming - https://www.quora.com/What-is-the-programming-environment?share=1
-6.) 
-
+6.) CSS hsl colours - https://www.w3schools.com/css/css_colors_hsl.asp
+7.) When do the hover,active and focus pseudo classes apply - https://bitsofco.de/when-do-the-hover-focus-and-active-pseudo-classes-apply/
+8.) Measurement units used in CSS - https://dev.to/matthias/units-in-css-em-rem-pt-px-vw-vh-vmin-vmax-ex-ch-53l0
+9.) Child Combinator (>) - https://www.geeksforgeeks.org/what-is-greater-than-sign-selector-in-css/
+10.) Declaring variables in CSS - https://openforge.io/mobile-academy/guides/mobile-app-development/how-to-declare-variables-in-css/
+     https://www.w3schools.com/css/css3_variables.asp
+11.) Whenever we want the child element to change along with the parents, we use the inherit property
+12.) 
 
 
